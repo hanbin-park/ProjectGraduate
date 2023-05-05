@@ -56,6 +56,21 @@ private float waitTime=1;
     BoxCollider boxCollider;
     Material mat;
 
+
+    
+//change
+// *******************************소현 수정 코드********************************
+[Header("Die anim 시 눈 바꾸기")]
+
+   // public Animator Dragon;
+    public GameObject eye_Die_R;
+    public GameObject eye_Die_L;
+    
+    public GameObject eye_R;
+    public GameObject eye_L;
+// *****************************************************************************
+    
+
     private void Start()
     {
 //change
@@ -63,10 +78,18 @@ private float waitTime=1;
        //
         m_anim = gameObject.GetComponent<Animator>();
         scoreUI = FindObjectOfType<Score>();
-    }
 
 
-    private void Awake()
+//change
+// *******************************소현 수정 코드********************************
+        eye_Die_R.SetActive(false);
+        eye_Die_L.SetActive(false);
+// *****************************************************************************
+
+}
+
+
+private void Awake()
     {
         bulletPos = transform.Find("bulletPos");
         thisPos=GetComponent<Transform>().position;
@@ -178,6 +201,15 @@ private float waitTime=1;
 
     private IEnumerator Die()
     {
+// *******************************소현 수정 코드********************************
+        eye_R.SetActive(false);
+        eye_L.SetActive(false);
+
+        eye_Die_R.SetActive(true);
+        eye_Die_L.SetActive(true);
+// *****************************************************************************
+
+
         isDead = true;
 
         m_anim.SetTrigger("IsDead");
