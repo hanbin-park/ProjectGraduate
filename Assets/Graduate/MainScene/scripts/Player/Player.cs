@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     {
         hp=maxhp;
   PlayerShoot.shootInput += ShootRay;
+  PlayerCamera=GetComponent<Camera>();
     }
 
     // Update is called once per frame
