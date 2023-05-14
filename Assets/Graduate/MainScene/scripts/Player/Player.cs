@@ -45,10 +45,7 @@ public class Player : MonoBehaviour
     {
         hp=maxhp;
   PlayerShoot.shootInput += ShootRay;
-<<<<<<< Updated upstream
-=======
   PlayerCamera=this.GetComponent<Camera>();
->>>>>>> Stashed changes
     }
 
     // Update is called once per frame
